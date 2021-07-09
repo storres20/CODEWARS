@@ -22,13 +22,17 @@ The numbers are positives
 
 
 //**************************************
-let a,b;
+let a,b,az,bz;
 console.log("NUEVO CODIGO...");
 
-a = '78099864177253771992779766288266836166272662';
+//a = '7809986417725377199277976628826683616627266299';
 //b = '78099864177253771992779766288266836166272662';
-b = '683616627266299999999';
+a = '999999999999999999999999999999999999999999999';
+b = '1';
+//b = '980998641772537719927797662882668361662726629';
 
+console.log("'a' length:");
+console.log(a.length);
 //a = '11';
 //b= '99';
 
@@ -162,7 +166,9 @@ if (numArrA.length >= numArrB.length) {
   for (let i = contArrI; i < contArrF; i++) {
     varA = parseInt(numArrA[i]);
     varC = varA + extra;
-    extra = 0;
+    //extra = 0;
+    extra = Math.floor(varC/(Math.pow(10,15)));
+    varC = varC%(Math.pow(10,15));
     numArrSuma.push(varC);
   }
 }
@@ -172,9 +178,16 @@ else{
   for (let i = contArrI; i < contArrF; i++) {
     varA = parseInt(numArrB[i]);
     varC = varB + extra;
-    extra = 0;
+    //extra = 0;
+    extra = Math.floor(varC/(Math.pow(10,15)));
+    varC = varC%(Math.pow(10,15));
     numArrSuma.push(varC);
   }
+}
+
+//respecto al EXTRA FINAL
+if (extra!==0) {
+  numArrSuma.push(extra);
 }
 
 //concatena como String final
@@ -187,9 +200,15 @@ let palabra;
 
 for (let i = 1; i <= contSumaX; i++) {
   palabra = numArrSuma[contSumaX-i].toString();
+  if (palabra === '0') {
+    palabra = '000000000000000';
+  }
   palabraXX += palabra;
   console.log(palabraXX);
 }
+
+console.log("suma length es:");
+console.log(palabraXX.length);
 } 
 
 // fin de ELSE
