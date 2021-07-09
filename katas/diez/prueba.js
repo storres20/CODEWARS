@@ -27,8 +27,8 @@ console.log("NUEVO CODIGO...");
 
 //a = '7809986417725377199277976628826683616627266299';
 //b = '78099864177253771992779766288266836166272662';
-a = '999999999999999999999999999999999999999999999';
-b = '1';
+b = '999999999999999999999999999999999999999999999';
+a = '11111';
 //b = '980998641772537719927797662882668361662726629';
 
 console.log("'a' length:");
@@ -196,14 +196,27 @@ let contSumaX = numArrSuma.length;
 
 let palabraXX="";
 let palabra;
+let contPalabra;
+let zeroPalabra="";
 //console.log(numArrSuma[1].toString());
+//contArrF ... mayor digito
 
 for (let i = 1; i <= contSumaX; i++) {
+  
   palabra = numArrSuma[contSumaX-i].toString();
+  contPalabra = palabra.length;
+  
   if (palabra === '0') {
     palabra = '000000000000000';
   }
-  palabraXX += palabra;
+else if(contSumaX-i<contArrF){
+  for (let y = 0; y < (15-contPalabra); y++) {
+    zeroPalabra += '0';
+  }
+}
+
+  palabraXX += zeroPalabra + palabra;
+  zeroPalabra = "";
   console.log(palabraXX);
 }
 
