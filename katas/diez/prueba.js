@@ -27,8 +27,8 @@ console.log("NUEVO CODIGO...");
 
 //a = '7809986417725377199277976628826683616627266299';
 //b = '78099864177253771992779766288266836166272662';
-b = '999999999999999999999999999999999999999999999';
-a = '11111';
+a = '91002328220491911630239667963';
+b = '1';
 //b = '980998641772537719927797662882668361662726629';
 
 console.log("'a' length:");
@@ -171,6 +171,9 @@ if (numArrA.length >= numArrB.length) {
     varC = varC%(Math.pow(10,15));
     numArrSuma.push(varC);
   }
+  if (extra !== 0) {
+    numArrSuma.push(extra);
+  }
 }
 else{
   contArrF = numArrB.length;
@@ -183,12 +186,15 @@ else{
     varC = varC%(Math.pow(10,15));
     numArrSuma.push(varC);
   }
+  if (extra !== 0) {
+    numArrSuma.push(extra);
+  }
 }
 
 //respecto al EXTRA FINAL
-if (extra!==0) {
+/*if (extra!==0) {
   numArrSuma.push(extra);
-}
+}*/
 
 //concatena como String final
 
@@ -209,7 +215,7 @@ for (let i = 1; i <= contSumaX; i++) {
   if (palabra === '0') {
     palabra = '000000000000000';
   }
-else if(contSumaX-i<contArrF){
+else if((contSumaX-i<contArrF) && contSumaX !== contArrF){
   for (let y = 0; y < (15-contPalabra); y++) {
     zeroPalabra += '0';
   }
